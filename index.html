@@ -21,17 +21,21 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input[type="button"] {
+        input{
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
         }
 
-        input[type="text"] {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+        .loginButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding-top: 100px;
+            padding-left: 30px;
         }
+
     </style>
 </head>
 <body>
@@ -39,12 +43,12 @@
         <form>
             <input type="text" placeholder="Account name" required>
             <br>
+            <input type="password" id="password" placeholder="Enter password" class="passcode" required>
             <br>
-            <input type="text" id="input" placeholder="Enter password" required>
-            <br>
-            <br>
-            <input type="button" value="Check            Password" py-click="passwordChecker">
+            <input type="text" id="username" placeholder="Enter username" required><br>
+            <input type="button" id="loginButton" value="Log In" py-click="passwordChecker">
         </form>
     </div>
+    <py-script src="main.py"></py-script>
 </body>
 </html>
