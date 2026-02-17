@@ -1,29 +1,25 @@
-from pyscript import display, document
+from pyscript import display
+from js import document
 
 def passwordChecker(e):
-
-    password = document.getElementById("input").value
-    special_characters = "!@#$%^&*()-+"
-    has_upper = any(c.isupper() for c in password)
-    has_lower = any(c.islower() for c in password)
-    has_digit = any(c.isdigit() for c in password)
-    has_special = any(c in special_characters for c in password)
-
-    if len(password) < 8:
-        display("Password must be at least 8 characters long.")
-    elif not has_upper:
-        display("Password must contain at least one uppercase letter.")
-    elif not has_lower:
-        display("Password must contain at least one lowercase letter.")
-    elif not has_digit:
-        display("Password must contain at least one digit.")
-    elif not has_special:
-        display("Password must contain at least one special character: " + special_characters)
-    else:
-        display("Password is strong and meets all criteria.", target="output")
-
+    username = document.getElementById("username").value
+    password = document.getElementById("password").value
+    document.getElementById("output").innerHTML = ""
     
+   
+    nume = any(char.isdigit() for char in password)
+    
+   
+    limit = len(password) > 12 or len(password) == 0
+    
+    if nume:
+        display("Password must contain at least one number", target="output")
+    elif limit:
+        display("Password cannot exceed 12 characters or be empty", target="output")
+    else:
+        display(f"you made an account welcome {username}", target="output")
 
+#groupmate assistance especially on the elif parts and the addiitonal js import document
 
 
 
